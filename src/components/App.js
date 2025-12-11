@@ -22,8 +22,8 @@ const states = [
         ],
       },
       {
-        name: "DBhopal",
-        description: "DBhopal is a city in the central Indian state of Madhya Pradesh. It's one of India's greenest city. There are two main lakes, the Upper Lake and the Lower Lake.",
+        name: "Bhopal",
+        description: "Bhopal is a city in the central Indian state of Madhya Pradesh. It's one of India's greenest city. There are two main lakes, the Upper Lake and the Lower Lake.",
         landmarks: [
           {
             name: "MANIT",
