@@ -197,13 +197,13 @@ function App() {
       </select>
 
       {/* Display selected items */}
-      <div id="state-name">State: {selectedState.name}</div>
+      <div id="state-title">State: {selectedState.name}</div>
       <div id="state-description">Description: {selectedState.description}</div>
 
-      <div id="city-name">City: {selectedCity.name}</div>
+      <div id="city-title">City: {selectedCity.name}</div>
       <div id="city-description">Description: {selectedCity.description}</div>
 
-      <div id="landmark-name">Landmark: {selectedLandmark.name}</div>
+      <div id="landmark-title">Landmark: {selectedLandmark.name}</div>
       <div id="landmark-description">Description: {selectedLandmark.description}</div>
     </div>
   );
