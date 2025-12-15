@@ -1,43 +1,50 @@
-import React, { useState,useReducer } from "react";
+import React, { useState, useReducer } from "react";
 import "./../styles/App.css";
-
 
 const states = [
   {
     name: "Madhya Pradesh",
-    description: "Madhya Pradesh, a large state in central India, retains landmarks from eras throughout Indian history.",
+    description:
+      "Madhya Pradesh, a large state in central India, retains landmarks from eras throughout Indian history.",
     city: [
       {
         name: "Indore",
-        description: "Indore is a city in west-central India. It's known for the 7-story Rajwada Palace and the Lal Baag Palace, which date back to Indore's 19th-century Holkar dynasty.",
+        description:
+          "Indore is a city in west-central India. It's known for the 7-story Rajwada Palace and the Lal Baag Palace, which date back to Indore's 19th-century Holkar dynasty.",
         landmarks: [
           {
             name: "Mhow",
-            description: "Dr. Ambedkar Nagar, commonly known as Mhow, is a cantonment in the Indore district in Madhya Pradesh state of India. It is located 23 kilometres south-west of Indore city, towards Mumbai on the old Mumbai-Agra Road.",
+            description:
+              "Dr. Ambedkar Nagar, commonly known as Mhow, is a cantonment in the Indore district in Madhya Pradesh state of India. It is located 23 kilometres south-west of Indore city, towards Mumbai on the old Mumbai-Agra Road.",
           },
           {
             name: "Dewas",
-            description: "Dewas is a city in the Malwa region of the Indian state of Madhya Pradesh. The municipality was formerly the seat of two princely states during the British Raj, Dewas Junior state and Dewas Senior state, ruled by the Puar clan of Maratha.",
+            description:
+              "Dewas is a city in the Malwa region of the Indian state of Madhya Pradesh. The municipality was formerly the seat of two princely states during the British Raj, Dewas Junior state and Dewas Senior state, ruled by the Puar clan of Maratha.",
           },
         ],
       },
       {
         name: "Bhopal",
-        description: "DBhopal is a city in the central Indian state of Madhya Pradesh. It's one of India's greenest city. There are two main lakes, the Upper Lake and the Lower Lake.",
+        description:
+          "DBhopal is a city in the central Indian state of Madhya Pradesh. It's one of India's greenest city. There are two main lakes, the Upper Lake and the Lower Lake.",
         landmarks: [
           {
             name: "MANIT",
-            description: "Maulana Azad National Institute of Technology Bhopal is a public technical university located in Bhopal, Madhya Pradesh, India.",
+            description:
+              "Maulana Azad National Institute of Technology Bhopal is a public technical university located in Bhopal, Madhya Pradesh, India. It is part of a group of publicly funded institutions in India known as National Institutes of Technology. ",
           },
           {
             name: "Berasia",
-            description: "Berasia is a landmark and a nagar palika in Bhopal district in the state of Madhya Pradesh, India.",
+            description:
+              "Berasia is a landmark and a nagar palika in Bhopal district in the state of Madhya Pradesh, India. ",
           },
         ],
       },
       {
         name: "Gwalior",
-        description: "Gwalior is a city in the central Indian state of Madhya Pradesh. It's known for its palaces and temples, including the Sas Bahu Ka Mandir intricately carved Hindu temple.",
+        description:
+          "Gwalior is a city in the central Indian state of Madhya Pradesh. It's known for its palaces and temples, including the Sas Bahu Ka Mandir intricately carved Hindu temple. ",
         landmarks: [
           {
             name: "Ajaypur",
@@ -49,47 +56,54 @@ const states = [
   },
   {
     name: "Jharkhand",
-    description: "Jharkhand is a state in eastern India. It's known for its waterfalls, the elegant Jain temples of Parasnath Hill and the elephants and tigers of Betla National Park.",
+    description:
+      "Jharkhand is a state in eastern India. It's known for its waterfalls, the elegant Jain temples of Parasnath Hill and the elephants and tigers of Betla National Park.",
     city: [
       {
         name: "Dhanbad",
-        description: "Dhanbad is the second-most populated city in the Indian state of Jharkhand. It ranks as the 33rd largest city in India and is the 42nd largest million-plus urban agglomeration in India.",
+        description:
+          "Dhanbad is the second-most populated city in the Indian state of Jharkhand. It ranks as the 33rd largest city in India and is the 42nd largest million-plus urban agglomeration in India. It is the 96th fastest growing urban area of the world by the City Mayors Foundation.",
         landmarks: [
           {
             name: "IIT(ISM) Dhanbad",
-            description: "Indian Institute of Technology (Indian School of Mines) Dhanbad is a public technical and research university located in Dhanbad, India.",
+            description:
+              "Indian Institute of Technology (Indian School of Mines) Dhanbad is a public technical and research university located in Dhanbad, India. It is an Institute of National Importance. IIT has 18 academic departments covering Engineering,",
           },
           {
             name: "Hirapur",
-            description: "Hirapur is a census landmark in Balaghat district in the Indian state of Madhya Pradesh.",
+            description:
+              "Hirapur is a census landmark in Balaghat district in the Indian state of Madhya Pradesh.",
           },
         ],
       },
       {
         name: "Wasseypur",
-        description: "Wasseypur is a neighbourhood in the city of Dhanbad in Dhanbad Sadar subdivision of Dhanbad district in the state of Jharkhand in India.",
+        description:
+          "Wasseypur is a neighbourhood in the city of Dhanbad in Dhanbad Sadar subdivision of Dhanbad district in the state of Jharkhand in India. ",
         landmarks: [
           {
             name: "Pandey muhalla",
-            description: "Located behind the dhanbad junction is must visit place.",
+            description:
+              "Located behind the dhanbad junction is must visit place.",
           },
           {
             name: "MPI Hall",
-            description: "Space for everyone.",
+            description: "Space for everyone",
           },
         ],
       },
       {
         name: "Hazaribagh",
-        description: "Hazaribagh is a city and a municipal corporation in Hazaribagh district in the Indian state of Jharkhand. It is the divisional headquarters of North Chotanagpur division.",
+        description:
+          "Hazaribagh is a city and a municipal corporation in Hazaribagh district in the Indian state of Jharkhand. It is the divisional headquarters of North Chotanagpur division.",
         landmarks: [
           {
             name: "Shaheed Nirmal Mahto Park",
-            description: "Famous for its giant dinosaur structure.",
+            description: "Famous for its giant dinosaur structure",
           },
           {
             name: "Gandhi Maidan",
-            description: "Ideal for conduction major events.",
+            description: "Ideal for conduction major events",
           },
         ],
       },
@@ -97,11 +111,13 @@ const states = [
   },
   {
     name: "Assam",
-    description: "Assam is a state in northeastern India known for its wildlife, archeological sites and tea plantations.",
+    description:
+      "Assam is a state in northeastern India known for its wildlife, archeological sites and tea plantations. ",
     city: [
       {
-        name: "Guwahati",
-        description: "Guwahati is a sprawling city beside the Brahmaputra River in the northeast Indian state of Assam. It’s known for holy sites like the hilltop Kamakhya Temple.",
+        name: "Guwhati",
+        description:
+          "Guwahati is a sprawling city beside the Brahmaputra River in the northeast Indian state of Assam. It's known for holy sites like the hilltop Kamakhya Temple,",
         landmarks: [
           {
             name: "Ganesh Guri",
@@ -109,13 +125,14 @@ const states = [
           },
           {
             name: "Kalyani Nagar",
-            description: "Located near famous Lakshmi Nagar.",
+            description: "located near famous Lakshmi Nagar",
           },
         ],
       },
       {
-        name: "Dimapur",
-        description: "Dimapur is a city in Nagaland, India. It is the most populous city of Nagaland and also the most densely populated city in the state with an estimated population of about 250,000.",
+        name: "dimapur",
+        description:
+          "Dimapur is a city in Nagaland, India. It is the most populous city of Nagaland and also the most densely populated city in the state with an estimated population of about 250,000.",
         landmarks: [
           {
             name: "City Tower",
@@ -129,15 +146,16 @@ const states = [
       },
       {
         name: "Tezpur",
-        description: "Tezpur is a landmark and urban agglomeration in Sonitpur district, Assam state, India. It is located on the banks of the river Brahmaputra.",
+        description:
+          "Tezpur is a landmark and urban agglomeration in Sonitpur district, Assam state, India. Tezpur is located on the banks of the river Brahmaputra, 175 kilometres northeast of Guwahati, and is the largest of the north bank landmarks with a population exceeding 100,000 as per Metropolitan Census 2011.",
         landmarks: [
           {
             name: "Bamuni Hills",
-            description: "Best location for photoshoots.",
+            description: "Best location for photoshoots",
           },
           {
             name: "Bhujkhowa Bazar",
-            description: "Central Market for Tezpur.",
+            description: "Central Market for Tezpur",
           },
         ],
       },
@@ -145,47 +163,55 @@ const states = [
   },
   {
     name: "Bihar",
-    description: "Bihar is a state in East India, bordering Nepal. It is divided by the River Ganges, which floods its fertile plains.",
+    description:
+      "Bihar is a state in East India, bordering Nepal. It is divided by the River Ganges, which floods its fertile plains. Important Buddhist pilgrimage sites include the Bodhi Tree in Bodhgaya's Mahabodhi Temple, under which the Buddha allegedly meditated.",
     city: [
       {
         name: "Patna",
-        description: "Patna is an ancient city that sprawls along the south bank of the Ganges River in Bihar, northeast India.",
+        description:
+          "Patna is an ancient city that sprawls along the south bank of the Ganges River in Bihar, northeast India.",
         landmarks: [
           {
             name: "Sonpur",
-            description: "Sonpur is a city and sub-division in the Indian state of Bihar, situated on the banks of the River Gandak and Ganges River in the Saran District.",
+            description:
+              "Sonpur is a city and sub-division in the Indian state of Bihar, situated on the banks of the River Gandak and Ganges River in the Saran District.",
           },
           {
             name: "Maner",
-            description: "Maner also spelled Maner or Maner Sharif, is a satellite landmark in Patna Metropolitan Region.",
+            description:
+              "Maner also spelled Maner or Maner Sharif, is a satellite landmark in Patna Metropolitan Region, in the Patna district in the Indian state of Bihar. Maner Sharif lies 24 km west of Patna the capital of Bihar on National Highway 30.",
           },
         ],
       },
       {
         name: "Gaya",
-        description: "Gaya is a holy city beside the Falgu River, in the northeast Indian state of Bihar.",
+        description:
+          "Gaya is a holy city beside the Falgu River, in the northeast Indian state of Bihar. It's known for 18th-century Vishnupad Mandir, a riverside temple with an octagonal shrine. Close by, ancient Mangla Gauri Temple is set on a hilltop. ",
         landmarks: [
           {
             name: "Bakraur",
-            description: "Bakraur, sometimes called Bakrour, is a village located slightly east of Bodh Gaya.",
+            description:
+              "Bakraur, sometimes called Bakrour, is a village located slightly east of Bodh Gaya in the state of Bihar, India. It lies directly across the Phalgu River from the landmark of Bodh Gaya, where Gautama Buddha is said to have attained enlightenment.",
           },
           {
             name: "Barachatti",
-            description: "Barachatti is a block in the Gaya district of Bihar, India.",
+            description:
+              "Barachatti is a block in the Gaya district of Bihar, India. Barachatti contains 141 villages and 13 gram panchayat. Sarwan bazar is the biggest and Nimi is the smallest village of Barachatti. The total population in Barachatti sub-district is 142,534 according to the census during 2011 by Indian Government.",
           },
         ],
       },
       {
         name: "Darbhanga",
-        description: "Darbhanga is a city and Municipal Corporation in the Indian state of Bihar.",
+        description:
+          "Darbhanga is a city and Municipal Corporation in the Indian state of Bihar. It is the 6th largest city of Bihar, only after Patna, Gaya, Bhagalpur, Muzaffarpur and Purnea. It is the headquarters of Darbhanga district and Darbhanga division and was the seat of the Raj Darbhanga and capital of the Mithila region.",
         landmarks: [
           {
             name: "Singhwara",
-            description: "Famous for its Groundnut Market.",
+            description: "Famous for its Groundnut Market",
           },
           {
             name: "Jale",
-            description: "Famous for its roasted seeds market.",
+            description: "Famous for its roasted seads market.",
           },
         ],
       },
@@ -193,77 +219,67 @@ const states = [
   },
 ];
 
-
-
 function App() {
-  // Default to the first State, City, and Landmark
-  const [selectedStateIndex, setSelectedStateIndex] = useState(0);
-  const [selectedCityIndex, setSelectedCityIndex] = useState(0);
-  const [selectedLandmarkIndex, setSelectedLandmarkIndex] = useState(0);
-
-  const handleStateChange = (e) => {
-    const stateIndex = parseInt(e.target.value);
-    setSelectedStateIndex(stateIndex);
-    setSelectedCityIndex(0); // reset city
-    setSelectedLandmarkIndex(0); // reset landmark
-  };
-
-  const handleCityChange = (e) => {
-    const cityIndex = parseInt(e.target.value);
-    setSelectedCityIndex(cityIndex);
-    setSelectedLandmarkIndex(0); // reset landmark
-  };
-
-  const handleLandmarkChange = (e) => {
-    const landmarkIndex = parseInt(e.target.value);
-    setSelectedLandmarkIndex(landmarkIndex);
-  };
-
-  const selectedState = states[selectedStateIndex];
-  const selectedCity = selectedState.city[selectedCityIndex];
-  const selectedLandmark = selectedCity.landmarks[selectedLandmarkIndex];
+  // Do not alter/remove main div
+  const [state, setState] = useState(0);
+  const [city, setCity] = useState(0);
+  const [landmark, setLandmark] = useState(0);
 
   return (
     <div id="main">
-      {/* State Dropdown */}
-      <select id="state" value={selectedStateIndex} onChange={handleStateChange}>
-        {states.map((state, index) => (
-          <option key={index} value={index}>
+      <select
+        id="state"
+        value={state}
+        onChange={(e) => {
+          setState(Number(e.target.value));
+          setCity(0);
+          setLandmark(0);
+        }}
+      >
+        {states.map((state, ind) => (
+          <option key={state.name} value={ind}>
             {state.name}
           </option>
         ))}
       </select>
-      <div id="state-title">{selectedState.name}</div>
-      <div id="state-description">{selectedState.description}</div>
-
-      {/* City Dropdown */}
-      <select id="city" value={selectedCityIndex} onChange={handleCityChange}>
-        {selectedState.city.map((city, index) => (
-          <option key={index} value={index}>
+      <select
+        value={city}
+        id="city"
+        onChange={(e) => {
+          setCity(Number(e.target.value));
+          setLandmark(0);
+        }}
+      >
+        {states[state].city.map((city, ind) => (
+          <option key={city.name} value={ind}>
             {city.name}
           </option>
         ))}
       </select>
-      <div id="city-title">{selectedCity.name}</div>
-      <div id="city-description">{selectedCity.description}</div>
-
-      {/* Landmark Dropdown */}
       <select
+        value={landmark}
         id="landmark"
-        value={selectedLandmarkIndex}
-        onChange={handleLandmarkChange}
+        onChange={(e) => setLandmark(Number(e.target.value))}
       >
-        {selectedCity.landmarks.map((landmark, index) => (
-          <option key={index} value={index}>
+        {states[state].city[city].landmarks.map((landmark, ind) => (
+          <option key={landmark.name} value={ind}>
             {landmark.name}
           </option>
         ))}
       </select>
-      <div id="landmark-title">{selectedLandmark.name}</div>
-      <div id="landmark-description">{selectedLandmark.description}</div>
+
+      <div id="state-title">{states[state].name}</div>
+      <div id="state-description">{states[state].description}</div>
+      <div id="city-title">{states[state].city[city].name}</div>
+      <div id="city-description">{states[state].city[city].description}</div>
+      <div id="landmark-title">
+        {states[state].city[city].landmarks[landmark].name}
+      </div>
+      <div id="landmark-description">
+        {states[state].city[city].landmarks[landmark].description}
+      </div>
     </div>
   );
 }
-
 
 export default App;
